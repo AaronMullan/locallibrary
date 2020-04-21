@@ -1,12 +1,18 @@
 .sidebar-nav {
-    margin-top: 20px;
-    padding: 0;
-    list-style: none;
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-nav a {
+  color: white;
 }
 
 .col-sm-2 {
-  background-color: hotpink;
+  background-color: grey;
+  border-radius: 0.2em;
 }
+
 a {
-  color: green
+  color: grey;
 }

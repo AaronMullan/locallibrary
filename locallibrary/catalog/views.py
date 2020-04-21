@@ -1,3 +1,4 @@
+from django.views import generic
 from django.shortcuts import render
 
 from catalog.models import Book, Author, BookInstance, Genre
@@ -13,6 +14,10 @@ def index(request):
     # Available books (status = 'a')
     num_instances_available = BookInstance.objects.filter(
         status__exact='a').count()
+    
+    # Books with genre of Science Fiction
+    num_science_books = Book.objects.filter(
+        title__icontains='science').count()
 
     # The 'all()' is implied by default.
     num_authors = Author.objects.count()
@@ -22,7 +27,17 @@ def index(request):
         'num_instances': num_instances,
         'num_instances_available': num_instances_available,
         'num_authors': num_authors,
+        'num_science_books': num_science_books,
     }
 
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'index.html', context=context)
+
+
+class BookListView(generic.ListView):
+    model = Book
+    paginate_by = 10
+
+
+class BookDetailView(generic.DetailView):
+    model = Book
