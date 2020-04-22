@@ -2,11 +2,16 @@
   margin-top: 20px;
   padding: 0;
   list-style: none;
+  color: var(--cyan)
 }
 
 .col-sm-2 {
   background-color: var(--secondary);
   border-radius: .2em;
+}
+
+ul {
+  list-style-type: none;
 }
 
 /*!
@@ -10408,6 +10413,4 @@ button.bg-dark:focus {
   .my-xl-n4 {
     margin-bottom: -1.5rem !important;
   }
-  .ml-xl-n4,
-  .mx-xl-n4 {
-
+}
