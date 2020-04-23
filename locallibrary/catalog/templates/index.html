@@ -2,7 +2,7 @@
 
 {% block content %}
   <h1>Little Library Home</h1>
-  <p>Welcome to Little Library by <a href= "https://www.linkedin.com/in/aaron-mullan/">Aaron Mullan</a></p>
+  <p>Welcome to Little Library by <a href= "https://www.linkedin.com/in/aaron-mullan/" target="blank" rel="noopener noreferrer">Aaron Mullan</a></p>
   <h3>The library currently contains:</h3>
   <ul>
     <li><strong>Books:</strong> {{ num_books }}</li>
@@ -12,6 +12,7 @@
     <li><strong>Books With "Delusions" in Title:</strong> {{ num_delusions_books }}</li>
   </ul>
 
-  <p>You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</p>
+  <p><small>User page views: {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.<br>
+  View on <a href= "https://github.com/AaronMullan/locallibrary" target="blank" rel="noopener noreferrer">Github</small></p>
 
 {% endblock %}
